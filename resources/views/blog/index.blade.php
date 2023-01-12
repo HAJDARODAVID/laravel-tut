@@ -9,11 +9,10 @@
 </head>
 <body>
     
-   @forelse ($posts as $post)
-        {{ $loop->iteration}}       
-   @empty
-        <p>No posts have been set</p>   
-   @endforelse
+
+   @foreach ($posts as $post)
+       {{ $post->title }}<br>
+   @endforeach
 
 </body>
 </html>

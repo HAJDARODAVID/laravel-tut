@@ -16,8 +16,9 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->take(10)->get();
-        dd($posts);
-        return view('blog.index');
+        return view('blog.index', [
+            'posts' => $posts
+        ]);
     }
 
     /**
