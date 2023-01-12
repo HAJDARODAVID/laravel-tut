@@ -1,3 +1,19 @@
-<h1>Blogs</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    @vite('resources/js/app.js')
+</head>
+<body>
+    
+   @forelse ($posts as $post)
+        {{ $loop->iteration}}       
+   @empty
+        <p>No posts have been set</p>   
+   @endforelse
 
-<a href={{ route('blog.show', ['id' => 1]) }}>Blog</a>
+</body>
+</html>

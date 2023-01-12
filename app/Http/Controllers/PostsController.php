@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,9 +15,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = DB::table('posts')
-            ->where('id', '>', '50')
-            ->get();
+        $posts = Post::orderBy('id', 'desc')->take(10)->get();
         dd($posts);
         return view('blog.index');
     }
