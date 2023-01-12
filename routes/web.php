@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*stal sam na https://www.youtube.com/watch?v=2mqsVzgsV_c -> 59:35*/
-
 Route::get('/', function () {
 
     return view('welcome');
